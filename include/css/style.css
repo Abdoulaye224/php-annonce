@@ -31,3 +31,19 @@ footer {
 footer p {
 	margin-bottom: .25rem;
 }
+
+.contenu{
+	display: flex;
+}
+
+.inscription{
+	width: 50vh;
+	margin: auto;
+	padding: 20px;
+}
+
+.connexion{
+	width: 50vh;
+	margin: auto;
+}
+
