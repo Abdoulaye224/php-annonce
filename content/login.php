@@ -17,8 +17,8 @@ if (isset($_POST['login'])) {
                 $user = $req->fetch();
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['connecte'] = true;
-
                 header('Location: profil.php');
+
             } else {
                 $_SESSION['error'] = "Erreur de connexion.";
                 header('Location: ../index.php');
