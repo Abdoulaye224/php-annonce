@@ -13,9 +13,6 @@
     Adresse email : <input type="email" name="mail"><br>
     Password: <input type="password" name="password"><br>
     Verifier password : <input type="password" name="verif"><br>
-    Numero de Téléphone : <input type="phonenumber" name="phonenumber"><br>
     Description: <textarea name="description"></textarea><br>
     <input type="submit" name="createAccount" value="S'inscrire">
 </form>
-
-<? include ('content/nav.php'); ?>
