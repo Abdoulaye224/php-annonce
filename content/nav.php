@@ -9,8 +9,8 @@
     <title>Petites annonces</title>
     <!-- Script CSS -->
     <link rel="stylesheet" href="../include/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <header>
     <style>
@@ -28,18 +28,31 @@
                 font-size: 3.5rem;
             }
         }
-    </style>
 
-    <div class="cover-container d-flex p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
-            <div class="inner">
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="createAnnonce.php">Publier</a>
-                    <a class="nav-link" href="editAnnonce.php">Editer</a>
-                    <a class="nav-link" href="disconnect.php">Se déconnecter</a>
-                </nav>
-            </div>
-        </header>
+        .menu {
+            color: white;
+        }
+
+        .menu:hover{
+            color: orange;
+            transition: 0.2s;
+        }
+
+        .nav_menu{
+            display: flex;
+        }
+        .droite{
+            margin-left: auto;
+        }
+
+    </style>
+ 
+        <nav class = "nav_menu" style="background-color: black; padding: 10px;"> 
+                <a class="menu nav-link" href="profil.php"><strong>Home</strong></a>
+                <a class="menu nav-link" href="createAnnonce.php"><strong>Publier</strong></a>
+                <a class="menu nav-link" href="editAnnonce.php"><strong>Editer</strong></a>
+                <a class="droite nav-link btn btn-danger" href="disconnect.php"><strong>Se déconnecter</strong></a>
+        </nav>
+           
 </header>
 <body>
