@@ -1,13 +1,22 @@
 <?php include ('nav.php'); ?>
 
 <style>
-#modified{
+
+.content{
     display: flex;
-    margin: 3px 3px 3px;
 }
+
+#modified{
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
 #form{
     margin: 20px 20px 20px;
 }
+
 </style>
 <?php 
 session_start();
@@ -20,31 +29,37 @@ $query->execute();
 $user = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<H1> VOTRE PROFILE</H1>
-<div id="modified">
-<div>
-    <?php 
-    foreach($user as $vrai):?>
-    <p>Login : <?php  echo $vrai['login']; ?></p>
-    <p> email : <?php echo $vrai['email']; ?> </p>
+<h1 style="text-align: center; margin-top: 20px;"> Mon Profil</h1>
 
-    <button>Modifier mon profil</button>
-    <?php endforeach; ?>
-</div>
-<div id="form">
+<div class = "content">
 
-<form action="crudUser.php" method="POST">
-    Login: <input type="text" name="login" value=""><br>
-    Adresse email : <input type="email" name="mail"><br>
-    password: <input type="password" name="password"><br>
-    Confirm password : <input type="password" name="verif"><br>
-    <input type="submit" name="validUpdate" value="Valider">
-</form>
-</div>
+    <div id="modified" class = "col-md-3">
+        <?php 
+        foreach($user as $vrai):?>
+        <label>Login :</label> 
+        <input class="form-control" disabled value="<?php  echo $vrai['login']; ?>">
+        <label>Email :</label> 
+        <input class="form-control" disabled value="<?php  echo $vrai['email']; ?>"><br>
 
-<?php  
-    
-?>
+        <button class = "btn btn-primary">Modifier mon profil</button>
+        <?php endforeach; ?>
+    </div>
+
+    <div id="form" class = "col-md-7">
+
+        <form action="crudUser.php" method="POST">
+            <label>Login :</label> 
+            <input class="form-control" type="text" name="login" value=""><br>
+            <label>Email :</label>
+            <input class="form-control" type="email" name="mail"><br>
+            <label>Mot de passe :</label>
+            <input class="form-control" type="password" name="password"><br>
+            <label>Confirmer mot de passe : </label>
+            <input class="form-control" type="password" name="verif"><br>
+            <input class = "btn btn-success" type="submit" name="validUpdate" value="Valider">
+        </form>
+    </div>
+
 </div>
 
 
